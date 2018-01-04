@@ -5,6 +5,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def load_iris_only(test_size=0.3, random_state=0):
+    X, y = load_iris(True)
+    X = X[:, [2, 3]]
+    return train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+
 def load_iris_and_fit_data(test_size=0.3, random_state=0):
     X, y = load_iris(True)
     X = X[:, [2, 3]]
